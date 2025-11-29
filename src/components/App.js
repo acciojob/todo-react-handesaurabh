@@ -1,4 +1,3 @@
-
 import React from "react";
 import './../styles/App.css';
 import TodoList from './TodoList';
@@ -6,9 +5,9 @@ import TodoList from './TodoList';
 const App = () => {
   return (
     <div>
-        <Todolist />
+      <TodoList />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
