@@ -1,19 +1,20 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import "./todolist.css";
 
-function TodoList(){
-const [todos, setTodos] = useState([]);
+function TodoList() {
+  const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState("");
-}
-const handleAddTodo = () => {
+
+  const handleAddTodo = () => {
     setTodos([...todos, newTodo]);
     setNewTodo("");
   };
-const handleRemoveTodo = (index) => {
+
+  const handleRemoveTodo = (index) => {
     setTodos(todos.filter((_, i) => i !== index));
   };
 
- return (
+  return (
     <div>
       <p>To-Do List</p>
       <input
@@ -22,12 +23,11 @@ const handleRemoveTodo = (index) => {
         onChange={(e) => setNewTodo(e.target.value)}
       />
       <button onClick={handleAddTodo}>Add Todo</button>
+
       <ul>
         {todos.map((todo, index) => (
-          <div className="item">
-            <li key={index}>
-              {todo}
-            </li>
+          <div className="item" key={index}>
+            <li>{todo}</li>
             <button onClick={() => handleRemoveTodo(index)}>Delete</button>
           </div>
         ))}
@@ -35,4 +35,5 @@ const handleRemoveTodo = (index) => {
     </div>
   );
 }
+
 export default TodoList;
