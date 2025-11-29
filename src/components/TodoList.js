@@ -2,8 +2,8 @@ import React,{useState} from "react";
 import "./todolist.css";
 
 function TodoList(){
- const [todos, setTodos] = useState(0);
-  const [newTodo, setNewTodo] = useState(0);
+const [todos, setTodos] = useState([]);
+  const [newTodo, setNewTodo] = useState("");
 }
 const handleAddTodo = () => {
     setTodos([...todos, newTodo]);
